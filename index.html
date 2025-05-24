@@ -492,7 +492,7 @@
   <!-- Quiz Page -->
   <div id="quizPage" class="page">
     <h1>《动物农场》</h1>
-    <div class="timer" id="timer">剩余时间:20:00</div>
+    <div class="timer" id="timer">剩余时间: 20:00</div>
     <div class="progress" id="progress">第 1/20 题</div>
     
     <div class="card">
@@ -859,7 +859,7 @@
     
     // 检查是否填写了反馈，如果没有则扣10分
     const feedback = document.getElementById('feedback').value.trim();
-    if (!feedback) {
+    if (!feedback || feedback.length < 20) {
       score = Math.max(0, score - 10);
     }
     
@@ -911,7 +911,7 @@
     document.getElementById('contact').value = '';
     document.getElementById('result').innerHTML = '';
     document.getElementById('congrats').style.display = 'none';
-    document.getElementById('timer').textContent = '剩余时间: 20:00';
+    document.getElementById('timer').textContent = '剩余时间: 10:00';
     document.getElementById('timer').classList.remove('warning');
     
     // 确保所有页面都处于非活动状态
